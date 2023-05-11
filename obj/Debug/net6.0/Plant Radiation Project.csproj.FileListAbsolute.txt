@@ -1,0 +1,18 @@
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.csproj.AssemblyReference.cache
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.AssemblyInfoInputs.cache
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.AssemblyInfo.cs
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.csproj.CoreCompileInputs.cache
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\bin\Debug\net6.0\input.txt
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\bin\Debug\net6.0\Plant Radiation Project.exe
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\bin\Debug\net6.0\Plant Radiation Project.deps.json
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\bin\Debug\net6.0\Plant Radiation Project.runtimeconfig.json
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\bin\Debug\net6.0\Plant Radiation Project.dll
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\bin\Debug\net6.0\Plant Radiation Project.pdb
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\bin\Debug\net6.0\TextFile.dll
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.csproj.CopyComplete
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.dll
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\refint\Plant Radiation Project.dll
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.pdb
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\Plant Radiation Project.genruntimeconfig.cache
+C:\Users\bug10\Desktop\ELTE2\OOP\New folder\Plant Radiation Project\obj\Debug\net6.0\ref\Plant Radiation Project.dll
