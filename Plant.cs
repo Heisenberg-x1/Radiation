@@ -23,7 +23,7 @@ namespace Plant_Radiation_Project
             return true;
         }
     }
-    class Wombleroot : Plant
+    public class Wombleroot : Plant
     {
         public Wombleroot(string name, int level) : base(name, level) { }
         public override bool IsAlive()
@@ -43,7 +43,7 @@ namespace Plant_Radiation_Project
         }
 
     }
-    class Wittentoot : Plant
+    public class Wittentoot : Plant
     {
         public Wittentoot(string name, int level) : base(name, level) { }
         public override bool IsAlive()
@@ -66,7 +66,7 @@ namespace Plant_Radiation_Project
             }
         }
     }
-    class Woreroot : Plant
+    public class Woreroot : Plant
     {
         public Woreroot(string name, int level) : base(name, level) { }
         public override bool IsAlive()

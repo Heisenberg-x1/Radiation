@@ -9,7 +9,8 @@ namespace Plant_Radiation_Project
             try
             {
                 Excecute ex = new Excecute();
-                List<string> lines = ex.ReadFile();
+                string filename = ex.Filename();
+                List<string> lines = ex.ReadFile(filename);
                 ex.Ecosystem(ref lines);
             }
 

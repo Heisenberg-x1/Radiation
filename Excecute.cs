@@ -19,9 +19,9 @@ namespace Plant_Radiation_Project
         {
             public EmptyFileNameException(string message) : base(message) { }
         }
-        public List<string> ReadFile()
+        public List<string> ReadFile(string filename)
         {
-            string filename = Filename();
+
 
             if (filename == "")
             {
