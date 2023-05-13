@@ -22,6 +22,7 @@ namespace Plant_Radiation_Project
         {
             return true;
         }
+        public abstract int Traverse(IRadiation radiation);
     }
     public class Wombleroot : Plant
     {
@@ -40,6 +41,11 @@ namespace Plant_Radiation_Project
             {
                 return 0;
             }
+        }
+        public override int Traverse(IRadiation R)
+        {
+            return R.EffectWombleroot(this);
+
         }
 
     }
@@ -65,6 +71,10 @@ namespace Plant_Radiation_Project
                 return 0;
             }
         }
+        public override int Traverse(IRadiation R)
+        {
+            return R.EffectWittentoot(this);
+        }
     }
     public class Woreroot : Plant
     {
@@ -72,6 +82,10 @@ namespace Plant_Radiation_Project
         public override bool IsAlive()
         {
             return nutrientLevel > 0;
+        }
+        public override int Traverse(IRadiation R)
+        {
+            return R.EffectWoreroot(this);
         }
     }
 }

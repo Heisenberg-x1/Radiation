@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Plant_Radiation_Project
 {
-    interface IRadiation
+    public interface IRadiation
     {
         public int EffectWombleroot(Wombleroot w);
         public int EffectWittentoot(Wittentoot w);

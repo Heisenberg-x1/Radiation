@@ -7,7 +7,7 @@ using TextFile;
 
 namespace Plant_Radiation_Project
 {
-    public class Excecute
+    public class Ecosystem
     {
         public string Filename()
         {
@@ -15,19 +15,15 @@ namespace Plant_Radiation_Project
             string filename = Console.ReadLine();
             return filename;
         }
-        public class EmptyFileNameException : Exception
-        {
-            public EmptyFileNameException(string message) : base(message) { }
-        }
         public List<string> ReadFile(string filename)
         {
 
 
-            if (filename == "")
+            if (string.IsNullOrEmpty(filename))
             {
-                throw new EmptyFileNameException("Empty file name passed!");
+                throw new ArgumentException("No file name was passed");
             }
-            else if (filename != "" && !File.Exists(filename))
+            else if (!string.IsNullOrEmpty(filename) && !File.Exists(filename))
             {
                 throw new FileNotFoundException(filename);
             }
@@ -39,7 +35,7 @@ namespace Plant_Radiation_Project
             }
             return lines;
         }
-        public void Ecosystem(ref List<string> lines)
+        public void Simulate(ref List<string> lines)
         {
             //DISPLAY THE CONTENT OF THE FILE
             Console.WriteLine("Content of the file:");
@@ -54,32 +50,28 @@ namespace Plant_Radiation_Project
             string radiation = "no radiation";
             int numberOfDaysWithNoRad = 1;
 
-
             while (numberOfDaysWithNoRad < 2)
             {
-
                 int alphademand = 0;
                 int deltademand = 0;
                 string temp_next_day = "";
                 switch (radiation)
                 {
-
                     case "no radiation":
-                        NoRadiation no = new NoRadiation();
                         for (int i = 0; i < lines.Count; i++)
                         {
                             string name = lines[i].Split(' ')[0];
                             string species = lines[i].Split(" ")[1];
                             int level = int.Parse(lines[i].Split(' ')[2]);
-
+                            NoRadiation no = new NoRadiation();
                             switch (species)
                             {
                                 case "wom":
                                     Wombleroot wom = new Wombleroot(name, level);
-                                    int newLevel = no.EffectWombleroot(wom);
+                                    int new_level = wom.Traverse(no);
                                     if (wom.isAlive)
                                     {
-                                        lines[i] = name + " " + species + " " + newLevel;
+                                        lines[i] = name + " " + species + " " + new_level;
                                     }
                                     else
                                     {
@@ -90,7 +82,7 @@ namespace Plant_Radiation_Project
                                     break;
                                 case "wit":
                                     Wittentoot wit = new Wittentoot(name, level);
-                                    int newLevel1 = no.EffectWittentoot(wit);
+                                    int newLevel1 = wit.Traverse(no);
                                     if (wit.isAlive)
                                     {
                                         lines[i] = name + " " + species + " " + newLevel1;
@@ -103,7 +95,7 @@ namespace Plant_Radiation_Project
                                     break;
                                 case "wor":
                                     Woreroot wor = new Woreroot(name, level);
-                                    int newLevel2 = no.EffectWoreroot(wor);
+                                    int newLevel2 = wor.Traverse(no);
                                     if (wor.isAlive)
                                     {
                                         lines[i] = name + " " + species + " " + newLevel2;
@@ -114,7 +106,6 @@ namespace Plant_Radiation_Project
                                     }
                                     break;
                             }
-
                         }
                         NextDayRad next1 = new NextDayRad(alphademand, deltademand);
                         temp_next_day = next1.Radiation();
@@ -137,18 +128,18 @@ namespace Plant_Radiation_Project
                         Console.WriteLine("Next day radiation: " + temp_next_day + "\n");
                         break;
                     case "alpha":
-                        Alpha alpha = new Alpha();
                         for (int i = 0; i < lines.Count; i++)
                         {
                             string name = lines[i].Split(' ')[0];
                             string species = lines[i].Split(" ")[1];
                             int level = int.Parse(lines[i].Split(' ')[2]);
+                            Alpha alpha = new Alpha();
 
                             switch (species)
                             {
                                 case "wom":
                                     Wombleroot wom = new Wombleroot(name, level);
-                                    int newLevel = alpha.EffectWombleroot(wom);
+                                    int newLevel = wom.Traverse(alpha);
                                     if (wom.isAlive)
                                     {
                                         lines[i] = name + " " + species + " " + newLevel;
@@ -161,7 +152,7 @@ namespace Plant_Radiation_Project
                                     break;
                                 case "wit":
                                     Wittentoot wit = new Wittentoot(name, level);
-                                    int newLevel1 = alpha.EffectWittentoot(wit);
+                                    int newLevel1 = wit.Traverse(alpha);
                                     if (wit.isAlive)
                                     {
                                         lines[i] = name + " " + species + " " + newLevel1;
@@ -174,7 +165,7 @@ namespace Plant_Radiation_Project
                                     break;
                                 case "wor":
                                     Woreroot wor = new Woreroot(name, level);
-                                    int newLevel2 = alpha.EffectWoreroot(wor);
+                                    int newLevel2 = wor.Traverse(alpha);
                                     if (wor.isAlive)
                                     {
                                         lines[i] = name + " " + species + " " + newLevel2;
@@ -208,18 +199,18 @@ namespace Plant_Radiation_Project
 
                         break;
                     case "delta":
-                        Delta del = new Delta();
                         for (int i = 0; i < lines.Count; i++)
                         {
                             string name = lines[i].Split(' ')[0];
                             string species = lines[i].Split(" ")[1];
                             int level = int.Parse(lines[i].Split(' ')[2]);
+                            Delta delta = new Delta();
 
                             switch (species)
                             {
                                 case "wom":
                                     Wombleroot wom = new Wombleroot(name, level);
-                                    int newLevel = del.EffectWombleroot(wom);
+                                    int newLevel = wom.Traverse(delta);
                                     if (wom.isAlive)
                                     {
                                         lines[i] = name + " " + species + " " + newLevel;
@@ -232,7 +223,7 @@ namespace Plant_Radiation_Project
                                     break;
                                 case "wit":
                                     Wittentoot wit = new Wittentoot(name, level);
-                                    int newLevel1 = del.EffectWittentoot(wit);
+                                    int newLevel1 = wit.Traverse(delta);
                                     if (wit.isAlive)
                                     {
                                         lines[i] = name + " " + species + " " + newLevel1;
@@ -245,7 +236,7 @@ namespace Plant_Radiation_Project
                                     break;
                                 case "wor":
                                     Woreroot wor = new Woreroot(name, level);
-                                    int newLevel2 = del.EffectWoreroot(wor);
+                                    int newLevel2 = wor.Traverse(delta);
                                     if (wor.isAlive)
                                     {
                                         lines[i] = name + " " + species + " " + newLevel2;
@@ -284,7 +275,7 @@ namespace Plant_Radiation_Project
 
             }
             Console.WriteLine("Exit successfully!Found 2 days with no radiation");
-
         }
+
     }
 }

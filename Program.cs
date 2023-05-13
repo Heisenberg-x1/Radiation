@@ -8,13 +8,13 @@ namespace Plant_Radiation_Project
         {
             try
             {
-                Excecute ex = new Excecute();
-                string filename = ex.Filename();
-                List<string> lines = ex.ReadFile(filename);
-                ex.Ecosystem(ref lines);
+                Ecosystem e = new Ecosystem();
+                string filename = e.Filename();
+                List<string> lines = e.ReadFile(filename);
+                e.Simulate(ref lines);
             }
 
-            catch (EmptyFileNameException e)
+            catch (ArgumentException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -22,6 +22,7 @@ namespace Plant_Radiation_Project
             {
                 Console.WriteLine("File not found!");
             }
+
         }
     }
 }
